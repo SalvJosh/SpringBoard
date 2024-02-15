@@ -1,0 +1,50 @@
+/* Styles for entire document */
+body {
+  font-family: "M PLUS 1 Code", monospace;   /* Google Font used for new font */
+    font-size: 16px;   /* Base font size */
+    line-height: 1.5;    /* Line height increased slightly */
+    color: rgb(50, 121, 50);  /* Text color is a shade of green */
+    background-color: rgb(223, 213, 205);  /* Backround color is a shade of beige */
+}
+
+/* Styles for main heading */
+h1 {
+    font-size: 2rem;  /* Increased main heading size */
+    text-shadow: 4px 4px 5px rgba(63, 177, 63, 0.7);  /* Shadow effect added. color matches hyperlinks */
+}
+
+/* Styles for sub heading h2 */
+h2 {
+    font-size: 1.4rem;  /* Adjusted sub heading sizes */
+}
+
+/* Styles for sub heading h3 */
+h3 {
+    font-size: 1.1rem;  /* Adjusted sub heading sizes */
+}
+
+/* Styles for paragraphs */
+p {
+    font-size: 0.85rem;  /* Adjusted paragraph sizes */
+}
+
+/* Styles for lists items */
+li {
+    font-size: 0.85rem;  /* Adjusted list item font sizes to match paragraphs */
+}
+
+/* Styles for table */
+table {
+    font-size: 0.85rem;  /* Adjusted table font sizes to match paragraphs */
+}
+/* Styles for form */
+form {
+    font-size: 0.85rem;  /* Adjusted form font sizes to match paragraphs */
+}
+
+/* Styles for anchor tags */
+a {
+    text-decoration: none;  /* Removed default unline */
+    color: rgba(63, 177, 63, 0.9);  /* A lighter green to distinguish from normal text */
+}
+
