@@ -1,0 +1,193 @@
+
+* {
+    box-sizing: border-box; /*  Border-box used for all elements. */
+}
+
+/* Styles for entire document */
+/* Padding, margin and border added to the body */
+body {
+    font-family: "M PLUS 1 Code", monospace;   /* Google Font used for new font */
+    font-size: 16px;   /* Base font size */
+    line-height: 1.5;    /* Line height increased slightly */
+    color: rgb(50, 121, 50);  /* Text color is a shade of green */
+    background-color: rgb(223, 213, 205);  /* Backround color is a shade of beige */
+    margin: 2rem;
+    padding: 2rem 2rem 1rem 2rem;
+    border: 3.5px rgb(50, 121, 50) solid;
+}
+  
+/* Styles for main heading */
+h1 {
+    font-size: 2rem;  /* Increased main heading size */
+    text-shadow: 4px 4px 5px rgba(63, 177, 63, 0.7);  /* Shadow effect added. color matches hyperlinks */
+    text-align: center;
+}
+  
+/* Styles for sub heading h2 */
+h2 {
+    font-size: 1.4rem;  /* Adjusted sub heading sizes */
+}
+  
+/* Styles for sub heading h3 */
+h3 {
+    font-size: 1.1rem;  /* Adjusted sub heading sizes */
+}
+
+/* Padding applied to seperate sections */
+h2, h3 {
+    padding-bottom: 0.5rem;
+}
+  
+/* Styles for paragraphs */
+p {
+    font-size: 0.85rem;  /* Adjusted paragraph sizes */
+}
+
+/* Styles for lists items */
+li {
+    font-size: 0.85rem;  /* Adjusted list item font sizes to match paragraphs */
+}
+
+/* Styles for table */
+table {
+    font-size: 0.85rem;  /* Adjusted table font sizes to match paragraphs */
+}
+/* Styles for form */
+form {
+    font-size: 0.85rem;  /* Adjusted form font sizes to match paragraphs */
+}
+
+form button {
+    padding: 0.5rem 1.5rem;
+    background-color: rgb(210, 200, 193);
+    color: rgb(50, 121, 50);
+    border: 2.5px rgb(50, 121, 50) solid;
+}
+
+form input, form textarea, form select {
+    padding: 0.1rem 0.2rem;
+    background-color: rgb(210, 200, 193);
+    color: rgb(50, 121, 50);
+    border: 2px rgb(50, 121, 50) solid;
+}
+
+/* Styles for anchor tags */
+a {
+    text-decoration: none;  /* Removed default unline */
+    color: rgba(63, 177, 63, 0.9);  /* A lighter green to distinguish from normal text */
+}
+
+/* Margins used to separte sections and borders used for spacing */
+main section, footer section {
+    border-top: 3px rgb(50, 121, 50) solid;
+    margin: 2.5rem 0;
+}
+
+/* Removes outlines from form elements to provide a cleaner look */
+form input, form textarea {
+    outline: none;
+}
+
+/* HEADER - Introduction section  */
+header section {
+    display: flex;
+    justify-content: space-between;
+    height: 20rem;
+}
+
+header section .image-container  {
+    align-self: flex-start;  /* Positions image in the top left */
+    width: 15rem;
+    height: 15rem;
+}
+
+header section .image-container img {
+    display: block;
+    border-radius: 50%; /* Used to round photo and to add a solid border */
+    height: 100%;
+    width: 100%;
+    object-fit: cover;  /* Preserves the original aspect ratio. */
+    object-position: 20%;   /* Endures that face is visible when adjusting window. */
+}
+
+.border-solid {
+    border: 3px rgb(50, 121, 50) solid; 
+}
+
+header section .name-container {
+    align-self: center;  /* Positions name in the center */
+}
+
+header section .information-container {
+    align-self: flex-end;   /* Positions information in the bottom right */
+}
+
+/*  MAIN - Technologies section  */
+.technologies .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*  MAIN - Tools section  */
+.tools .container {
+    display: flex;
+    justify-content: center;
+}
+
+/*  MAIN - Projects section  */
+.project-entry {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.project-entry .image-container {
+    display: flex;
+    justify-content: center;
+    margin-right: 2rem;
+}
+
+.project-entry .image-container img
+{
+    object-fit: contain;
+}
+
+.projects .message-container
+{
+    margin-top: 1rem;
+    text-align: end;
+}
+
+/*  MAIN - Contact section  */
+.contact .form-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact .text-input-container label, .contact .select-container label {
+    flex-grow: 1;
+}
+
+.contact .text-input-container, .contact .select-container, .contact .radio-container {
+    display: flex;
+    margin: 1rem;
+    width: 30rem;
+}
+
+.contact .text-input-container input, .contact .text-input-container textarea, .contact .select-container select {
+    width: 20rem;
+}
+
+.contact .text-input-container textarea {
+    height: 12rem;
+}
+
+.contact .button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contact .button-container button[type=submit]
+{
+  margin-right: 1rem;
+}
