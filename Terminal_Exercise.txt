@@ -1,0 +1,36 @@
+Last login: Mon May 20 16:24:03 on ttys000
+salvojosh@Joshuas-MBP ~ % mkdir first
+salvojosh@Joshuas-MBP ~ % ls
+<!DOCTYPE html>.html			Library
+About myself.txt			Meme Generator
+Applications				Movies
+Bellabeat_Casestudy_2			Music
+Code					Pictures
+Desktop					Public
+Documents				Weaknesses.txt
+Downloads				Why do you want to work here?.txt
+Interview - About myself.txt		Why should we hire you?.txt
+Interview - Adversity.txt		first
+Interview - Strengths.txt		first.html
+Interview - Strengths:Weaknesses.txt
+salvojosh@Joshuas-MBP ~ % cd first
+salvojosh@Joshuas-MBP first % touch person.txt
+salvojosh@Joshuas-MBP first % mv person.txt another.txt
+salvojosh@Joshuas-MBP first % cp another.txt copy.txt
+salvojosh@Joshuas-MBP first % tm copy.txt
+zsh: command not found: tm
+salvojosh@Joshuas-MBP first % rm copy.txt
+salvojosh@Joshuas-MBP first % cp ~r first second
+zsh: no such user or named directory: r
+salvojosh@Joshuas-MBP first % ls
+another.txt
+salvojosh@Joshuas-MBP first % cd -r first second
+cd: too many arguments
+salvojosh@Joshuas-MBP first % cp -r first second
+cp: first: No such file or directory
+salvojosh@Joshuas-MBP first % cd ..
+salvojosh@Joshuas-MBP ~ % cd first
+salvojosh@Joshuas-MBP first % cp -r first second
+cp: first: No such file or directory
+salvojosh@Joshuas-MBP first % rm -rf second
+salvojosh@Joshuas-MBP first % 
