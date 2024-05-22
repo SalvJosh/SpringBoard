@@ -1,0 +1,58 @@
+Last login: Tue May 21 12:27:21 on ttys000
+salvojosh@Joshuas-MBP ~ % mkdir learn_git_again
+salvojosh@Joshuas-MBP ~ % cd learn_git_again
+salvojosh@Joshuas-MBP learn_git_again % touch third.txt
+salvojosh@Joshuas-MBP learn_git_again % git init
+Initialized empty Git repository in /Users/salvojosh/learn_git_again/.git/
+salvojosh@Joshuas-MBP learn_git_again % git add third.txt
+salvojosh@Joshuas-MBP learn_git_again % git commit -m "adding third.txt"
+[main (root-commit) 13a68a7] adding third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 third.txt
+salvojosh@Joshuas-MBP learn_git_again % git log
+commit 13a68a715030ff963a226b3fcd03cccd38f61fb9 (HEAD -> main)
+Author: JSalvo54 <salvojosh@gmail.com>
+Date:   Wed May 22 10:40:08 2024 -0400
+
+    adding third.txt
+salvojosh@Joshuas-MBP learn_git_again % touch fourth.txt
+salvojosh@Joshuas-MBP learn_git_again % git add fourth.txt
+salvojosh@Joshuas-MBP learn_git_again % git commit -m "adding fourth.txt"
+[main e5d2d83] adding fourth.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fourth.txt
+salvojosh@Joshuas-MBP learn_git_again % rm third.txt
+salvojosh@Joshuas-MBP learn_git_again % git add third.txt
+salvojosh@Joshuas-MBP learn_git_again % git commit -m "removing third.txt"
+[main cc1f967] removing third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 third.txt
+salvojosh@Joshuas-MBP learn_git_again % git log
+commit cc1f96771be55e5f383f09675a474aa65300daa1 (HEAD -> main)
+Author: JSalvo54 <salvojosh@gmail.com>
+Date:   Wed May 22 10:41:41 2024 -0400
+
+    removing third.txt
+
+commit e5d2d83e5866506442436fe16c9a1789ccaa2c1f
+Author: JSalvo54 <salvojosh@gmail.com>
+Date:   Wed May 22 10:40:59 2024 -0400
+
+    adding fourth.txt
+
+commit 13a68a715030ff963a226b3fcd03cccd38f61fb9
+Author: JSalvo54 <salvojosh@gmail.com>
+Date:   Wed May 22 10:40:08 2024 -0400
+
+    adding third.txt
+salvojosh@Joshuas-MBP learn_git_again % git config --global core.paper "cat"
+salvojosh@Joshuas-MBP learn_git_again % git config --global --list
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+user.name=JSalvo54
+user.email=salvojosh@gmail.com
+core.paper=cat
+salvojosh@Joshuas-MBP learn_git_again % 
+
