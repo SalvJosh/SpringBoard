@@ -1,0 +1,49 @@
+Last login: Wed May 22 10:53:33 on ttys001
+salvojosh@Joshuas-MBP ~ % git init my-repo                                      Initialized empty Git repository in /Users/salvojosh/my-repo/.git/
+salvojosh@Joshuas-MBP ~ % cd my-repo
+salvojosh@Joshuas-MBP my-repo % echo "Branching Exercise" > file.txt
+salvojosh@Joshuas-MBP my-repo % git add file.txt
+salvojosh@Joshuas-MBP my-repo % git commit -m "Initial commit."
+[main (root-commit) 8647331] Initial commit.
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.txt
+salvojosh@Joshuas-MBP my-repo % git checkout -b feature-branch
+Switched to a new branch 'feature-branch'
+salvojosh@Joshuas-MBP my-repo % echo "This is a new feature." >> file.txt
+salvojosh@Joshuas-MBP my-repo % git add file.txt
+salvojosh@Joshuas-MBP my-repo % git commit -m "Add new feature"
+[feature-branch 6ebd58b] Add new feature
+ 1 file changed, 1 insertion(+)
+salvojosh@Joshuas-MBP my-repo % git checkout master
+error: pathspec 'master' did not match any file(s) known to git
+salvojosh@Joshuas-MBP my-repo % git merge feature-branch
+Already up to date.
+salvojosh@Joshuas-MBP my-repo % echo "Change on master." >> file.txt
+
+salvojosh@Joshuas-MBP my-repo % git add file.txt
+salvojosh@Joshuas-MBP my-repo % git commit -m "Modify file on master"
+[feature-branch a28b301] Modify file on master
+ 1 file changed, 1 insertion(+)
+salvojosh@Joshuas-MBP my-repo % git checkout -b conflicting-branch
+Switched to a new branch 'conflicting-branch'
+salvojosh@Joshuas-MBP my-repo % echo "Conflicting change." >> file.txt
+salvojosh@Joshuas-MBP my-repo % git commit -m "Modify file on conflicting branch"
+[conflicting-branch 80248e0] Modify file on conflicting branch
+ 1 file changed, 1 insertion(+)
+salvojosh@Joshuas-MBP my-repo % git checkout master
+error: pathspec 'master' did not match any file(s) known to git
+salvojosh@Joshuas-MBP my-repo % git merge conflicting-branch
+Already up to date.
+salvojosh@Joshuas-MBP my-repo % git add file.txt
+salvojosh@Joshuas-MBP my-repo % git commit -m "Resolve merge conflict"
+On branch conflicting-branch
+nothing to commit, working tree clean
+salvojosh@Joshuas-MBP my-repo % 
+
+
+
+
+
+
+
+
