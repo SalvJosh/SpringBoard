@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+:focus {
+  outline: none; /* Removes the default outline on focus */
+}
+
+body {
+  font-family: Arial, sans-serif; /* Sets a sans-serif font for the page */
+  display: flex; /* Centers the content vertically and horizontally */
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background: linear-gradient(
+    135deg,
+    #9d8cf2,
+    #e9ecef
+  ); /* Adds a linear gradient background */
+  margin: 0; /* Removes default margin */
+}
+
+input {
+  width: 100%; /* Full width of the container */
+  padding: 10px; /* Padding inside the input */
+  border: 1px solid #ccc; /* Light grey border */
+  border-radius: 4px; /* Rounded corners */
+  box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+.search-container {
+  position: relative; /* Allows positioning of suggestions */
+  width: 300px; /* Fixed width of the search container */
+}
+
+.search-container input,
+.search-container .suggestions {
+  width: 100%; /* Full width of the container */
+  box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+.search-container .suggestions {
+  position: absolute; /* Positions below the input field */
+  top: 40px; /* Positioned right below the input field */
+  border: 1px solid #ccc; /* Light grey border */
+  border-top: none; /* No top border to connect with the input field */
+  border-radius: 0 0 4px 4px; /* Rounded bottom corners */
+  background-color: #9d8cf2; /* Background for the suggestions */
+  list-style: none; /* Removes default list styling */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+  max-height: 200px; /* Limits the height of the suggestions box */
+  overflow-y: auto; /* Allows vertical scrolling if content overflows */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  z-index: 1000; /* Ensures it appears above other elements */
+}
+
+ul {
+  list-style: none; /* Removes default list styling */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+}
+
+ul.has-suggestions {
+  display: block; /* Ensures the suggestions are visible */
+}
+
+ul li {
+  padding: 10px; /* Padding inside each list item */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+ul li:hover {
+  background-color: #e9ecef; /* Light grey background on hover */
+}
