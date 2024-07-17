@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Movies App</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bootstrap/dist/css/bootstrap.css"
+    />
+    <style>
+      .movie-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .movie-item span {
+        flex-grow: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center">Movies App</h1>
+      <form id="movie-form" class="mb-4">
+        <div class="form-group">
+          <label for="title">Movie Title</label>
+          <input
+            type="text"
+            id="title"
+            class="form-control"
+            required
+            minlength="2"
+          />
+        </div>
+        <div class="form-group">
+          <label for="rating">Rating (0-10)</label>
+          <input
+            type="number"
+            id="rating"
+            class="form-control"
+            min="0"
+            max="10"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Add Movie</button>
+      </form>
+      <div>
+        <button id="sort-title" class="btn btn-secondary mb-2">
+          Sort by Title
+        </button>
+        <button id="sort-rating" class="btn btn-secondary mb-2">
+          Sort by Rating
+        </button>
+        <button id="sort-rating-reverse" class="btn btn-secondary mb-2">
+          Sort by Rating (Reverse)
+        </button>
+      </div>
+      <div id="movie-list">
+        <!-- Movies will be appended here -->
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const movieForm = document.getElementById("movie-form");
+        const movieList = document.getElementById("movie-list");
+        const sortTitleButton = document.getElementById("sort-title");
+        const sortRatingButton = document.getElementById("sort-rating");
+        const sortRatingReverseButton = document.getElementById(
+          "sort-rating-reverse"
+        );
+
+        movieForm.addEventListener("submit", (event) => {
+          event.preventDefault();
+
+          const titleInput = document.getElementById("title");
+          const ratingInput = document.getElementById("rating");
+
+          const title = titleInput.value.trim();
+          const rating = ratingInput.value.trim();
+
+          if (title.length < 2 || rating < 0 || rating > 10) {
+            alert("Please enter a valid title and rating.");
+            return;
+          }
+
+          const movieItem = document.createElement("div");
+          movieItem.className = "movie-item";
+          movieItem.innerHTML = `
+        <span>${title} - ${rating}</span>
+        <button class="btn btn-danger btn-sm">Remove</button>
+      `;
+
+          const removeButton = movieItem.querySelector("button");
+          removeButton.addEventListener("click", () => {
+            movieItem.remove();
+          });
+
+          movieList.appendChild(movieItem);
+
+          movieForm.reset();
+        });
+
+        sortTitleButton.addEventListener("click", () => {
+          sortMovies("title");
+        });
+
+        sortRatingButton.addEventListener("click", () => {
+          sortMovies("rating");
+        });
+
+        sortRatingReverseButton.addEventListener("click", () => {
+          sortMovies("rating", true);
+        });
+
+        function sortMovies(criteria, reverse = false) {
+          const movieItems = Array.from(movieList.children);
+
+          movieItems.sort((a, b) => {
+            const aValue = a.querySelector("span").textContent.split(" - ");
+            const bValue = b.querySelector("span").textContent.split(" - ");
+
+            if (criteria === "title") {
+              return aValue[0].localeCompare(bValue[0]);
+            } else if (criteria === "rating") {
+              const comparison = parseFloat(aValue[1]) - parseFloat(bValue[1]);
+              return reverse ? -comparison : comparison;
+            }
+          });
+
+          movieItems.forEach((item) => movieList.appendChild(item));
+        }
+      });
+    </script>
+  </body>
+</html>
