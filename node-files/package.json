@@ -1,0 +1,14 @@
+{
+  "name": "first-app",
+  "version": "1.0.0",
+  "main": "step1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Josh Salvo",
+  "license": "ISC",
+  "description": "Exercise to create file listing functions.",
+  "dependencies": {
+    "axios": "^1.7.9"
+  }
+}
